@@ -1,0 +1,227 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Copilot for Ed Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: #050810;
+            --accent: #638cff;
+            --glass: rgba(255, 255, 255, 0.1);
+            --text: #ffffff;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .feature {
+            margin: 20px;
+            width: calc(33.33% - 20px);
+            min-width: 200px;
+        }
+        .feature h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .feature p {
+            font-size: 16px;
+        }
+        .how-it-works {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .how-it-works h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .how-it-works p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .cta h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .cta form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .cta input {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+        .cta button {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: var(--accent);
+            color: var(--text);
+            cursor: pointer;
+        }
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .footer p {
+            font-size: 14px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        .animate {
+            animation: fadeIn 1s;
+        }
+        .slide {
+            animation: slideIn 1s;
+        }
+        @media only screen and (max-width: 768px) {
+            .feature {
+                width: calc(50% - 20px);
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .feature {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero glass animate">
+            <h1>🤖 AI Copilot for Ed Tech</h1>
+            <p>The smartest way to an AI copilot for ed tech to support as helpdesk</p>
+        </div>
+        <div class="features glass slide">
+            <div class="feature">
+                <h2>📚 Personalized Learning</h2>
+                <p>Get personalized learning recommendations based on your needs</p>
+            </div>
+            <div class="feature">
+                <h2>🤝 Community Support</h2>
+                <p>Join a community of educators and students for support and guidance</p>
+            </div>
+            <div class="feature">
+                <h2>📊 Analytics and Insights</h2>
+                <p>Get detailed analytics and insights to track your progress</p>
+            </div>
+        </div>
+        <div class="how-it-works glass animate">
+            <h2>🤔 How it Works</h2>
+            <p>Our AI copilot uses machine learning algorithms to provide personalized support and guidance</p>
+        </div>
+        <div class="cta glass slide">
+            <h2>📝 Sign up for Early Access</h2>
+            <form>
+                <input type="email" placeholder="Enter your email">
+                <button>Sign up</button>
+            </form>
+        </div>
+        <div class="footer glass animate">
+            <p>👍 2024 AI Copilot for Ed Tech</p>
+        </div>
+    </div>
+    <script>
+        // Add event listener to button
+        document.querySelector('.cta button').addEventListener('click', () => {
+            // Get input value
+            const email = document.querySelector('.cta input').value;
+            // Validate email
+            if (email !== '') {
+                // Send email to server (replace with your server URL)
+                fetch('https://example.com/api/subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: email })
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error(error));
+            }
+        });
+    </script>
+</body>
+</html>
+```
